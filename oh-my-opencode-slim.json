@@ -1,98 +1,137 @@
 {
-	"$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-	"preset": "opus-orchestrator",
-	"presets": {
-		"all-ds-flash": {
-			"orchestrator": {
-				"model": "9router/ds/deepseek-flash",
-				"skills": ["*"],
-				"mcps": ["*", "!context7"]
-			},
-			"oracle": {
-				"model": "9router/ds/deepseek-flash",
-				"skills": ["simplify"],
-				"mcps": []
-			},
-			"explorer": {
-				"model": "9router/ds/deepseek-flash",
-				"skills": [],
-				"mcps": ["context7", "gh_grep", "tavily"]
-			},
-			"designer": {
-				"model": "9router/ds/deepseek-flash",
-				"skills": ["impeccable"],
-				"mcps": []
-			},
-			"fixer": {
-				"model": "9router/ds/deepseek-flash",
-				"skills": [],
-				"mcps": []
-			}
-		},
-		"opus-orchestrator": {
-			"orchestrator": {
-				"model": "9router/cc/claude-opus-4-8",
-				"variant": "high",
-				"skills": ["*"],
-				"mcps": ["*", "!context7"]
-			},
-			"oracle": {
-				"model": "9router/cc/claude-opus-4-8",
-				"variant": "max",
-				"skills": ["simplify"],
-				"mcps": []
-			},
-			"explorer": {
-				"model": "opencode/deepseek-v4.1-flash-free",
-				"skills": [],
-				"mcps": ["context7", "gh_grep", "tavily"]
-			},
-			"designer": {
-				"model": "9router/ds/deepseek-flash",
-				"skills": ["impeccable"],
-				"mcps": []
-			},
-			"fixer": {
-				"model": "9router/ds/deepseek-flash",
-				"skills": [],
-				"mcps": []
-			}
-		},
-		"all-free": {
-			"orchestrator": {
-				"model": "opencode/deepseek-v4.1-flash-free",
-				"skills": ["*"],
-				"mcps": ["*", "!context7"]
-			},
-			"oracle": {
-				"model": "opencode/nemotron-3-ultra-free",
-				"skills": ["simplify"],
-				"mcps": []
-			},
-			"explorer": {
-				"model": "opencode/nemotron-3.5-lightning-free",
-				"skills": [],
-				"mcps": ["context7", "gh_grep", "tavily"]
-			},
-			"designer": {
-				"model": "opencode/glm-5.3-flash-free",
-				"skills": ["impeccable"],
-				"mcps": []
-			},
-			"fixer": {
-				"model": "opencode/deepseek-v4.1-flash-free",
-				"skills": [],
-				"mcps": []
-			}
-		}
-	},
-	"companion": {
-		"enabled": false,
-		"position": "bottom-right",
-		"size": "medium",
-		"gifPack": "default",
-		"loopStyle": "classic",
-		"speed": 1,
-		"debug": false
-	}
+  "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
+  "preset": "gretong",
+  "presets": {
+    "main": {
+      "orchestrator": {
+        "model": "9router/cc/claude-opus-4-8",
+        "variant": "high",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "9router/cc/claude-opus-4-8",
+        "variant": "max",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "explorer": {
+        "model": "opencode/deepseek-v4.1-flash-free",
+        "skills": [],
+        "mcps": [
+          "context7",
+          "gh_grep",
+          "tavily"
+        ]
+      },
+      "designer": {
+        "model": "9router/ds/deepseek-flash",
+        "skills": [
+          "impeccable"
+        ],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "9router/ds/deepseek-flash",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "mocin": {
+      "orchestrator": {
+        "model": "9router/ds/deepseek-flash",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "9router/ds/deepseek-flash",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "explorer": {
+        "model": "9router/ds/deepseek-flash",
+        "skills": [],
+        "mcps": [
+          "context7",
+          "gh_grep",
+          "tavily"
+        ]
+      },
+      "designer": {
+        "model": "9router/ds/deepseek-flash",
+        "skills": [
+          "impeccable"
+        ],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "9router/ds/deepseek-flash",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "gretong": {
+      "orchestrator": {
+        "model": "opencode/deepseek-v4.1-flash-free",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "opencode/nemotron-3-ultra-free",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "explorer": {
+        "model": "opencode/nemotron-3.5-lightning-free",
+        "skills": [],
+        "mcps": [
+          "context7",
+          "gh_grep",
+          "tavily"
+        ]
+      },
+      "designer": {
+        "model": "opencode/glm-5.3-flash-free",
+        "skills": [
+          "impeccable"
+        ],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "opencode/deepseek-v4.1-flash-free",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  },
+  "companion": {
+    "enabled": false,
+    "position": "bottom-right",
+    "size": "medium",
+    "gifPack": "default",
+    "loopStyle": "classic",
+    "speed": 1,
+    "debug": false
+  }
 }
