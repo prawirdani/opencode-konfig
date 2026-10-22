@@ -4,27 +4,27 @@
 	"presets": {
 		"all-ds-flash": {
 			"orchestrator": {
-				"model": "9router/ds/deepseek-v4-flash",
+				"model": "9router/ds/deepseek-flash",
 				"skills": ["*"],
 				"mcps": ["*", "!context7"]
 			},
 			"oracle": {
-				"model": "9router/ds/deepseek-v4-flash",
+				"model": "9router/ds/deepseek-flash",
 				"skills": ["simplify"],
 				"mcps": []
 			},
 			"explorer": {
-				"model": "9router/ds/deepseek-v4-flash",
+				"model": "9router/ds/deepseek-flash",
 				"skills": [],
 				"mcps": []
 			},
 			"designer": {
-				"model": "9router/ds/deepseek-v4-flash",
+				"model": "9router/ds/deepseek-flash",
 				"skills": ["impeccable"],
 				"mcps": []
 			},
 			"fixer": {
-				"model": "9router/ds/deepseek-v4-flash",
+				"model": "9router/ds/deepseek-flash",
 				"skills": [],
 				"mcps": []
 			}

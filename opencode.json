@@ -9,8 +9,7 @@
 			},
 			"models": {
 				"glm/glm-5.3-flash": {},
-				"ds/deepseek-v4-flash": {},
-				"ds/deepseek-v4-flash-vision-exp": {},
+				"ds/deepseek-flash": {},
 				"cc/claude-fable-5": {
 					"name": "cc/claude-fable-5",
 					"capabilities": {
