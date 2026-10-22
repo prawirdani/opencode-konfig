@@ -16,7 +16,7 @@
 			"explorer": {
 				"model": "9router/ds/deepseek-flash",
 				"skills": [],
-				"mcps": []
+				"mcps": ["context7", "gh_grep", "tavily"]
 			},
 			"designer": {
 				"model": "9router/ds/deepseek-flash",
