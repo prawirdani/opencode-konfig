@@ -146,7 +146,12 @@
 			"effect": "allow"
 		}
 	],
-	"plugins": ["@dietrichgebert/ponytail", "./plugins/caveman", "oh-my-opencode-slim"],
+	"plugins": [
+		"./plugins/rtk.ts",
+		"@dietrichgebert/ponytail",
+		"./plugins/caveman",
+		"oh-my-opencode-slim"
+	],
 	"mcp": {
 		"servers": {
 			"playwright": {
