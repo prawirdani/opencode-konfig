@@ -1,5 +1,6 @@
 {
 	"version": 1,
+	"note": "Entries carrying a 'ref' record sha256 of 'skillPath' at that upstream commit. Entries without one predate this convention; their hash scheme is unrecorded.",
 	"skills": {
 		"cavecrew": {
 			"source": "JuliusBrussee/caveman",
@@ -72,6 +73,90 @@
 			"sourceType": "github",
 			"skillPath": "skills/productivity/grilling/SKILL.md",
 			"computedHash": "4ebdd12fe61ff3abf20cff6683740e2b9b3739454be0a3f4a928a1c4d07d6b34"
+		},
+		"diagnosing-bugs": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/engineering/diagnosing-bugs/SKILL.md",
+			"computedHash": "849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d"
+		},
+		"handoff": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/productivity/handoff/SKILL.md",
+			"computedHash": "4cbb043950dad2ffd3662ff1a5a0b51ae676004b5cae10e3787e8ee7a4ee69d3"
+		},
+		"impeccable": {
+			"source": "pbakaus/impeccable",
+			"sourceType": "github",
+			"ref": "8644175285360c166e57b1e35ecadfbc85ff5209",
+			"skillPath": ".opencode/skills/impeccable/SKILL.md",
+			"computedHash": "f6f412bd840dd6e96ed94cc4294c9216305b50a0a66fbaeab5f8ddf148d3e85a"
+		},
+		"implement-spec": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/engineering/implement-spec/SKILL.md",
+			"computedHash": "7a22dd2e60b8fcece478ced9d2533582adf3520d695acd3ab715341535c9e56d"
+		},
+		"improve-codebase-architecture": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/engineering/improve-codebase-architecture/SKILL.md",
+			"computedHash": "552240a5ab5cec6b67c15dd1ad6e9f6962b1bca6ce870059a8c2713760c20392"
+		},
+		"megacave": {
+			"source": "JuliusBrussee/caveman",
+			"sourceType": "github",
+			"ref": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+			"skillPath": "skills/megacave/SKILL.md",
+			"computedHash": "139105296c0686c1ee24610caca1db293ab84162beb0d94aa7a9ad7cbc3352bf"
+		},
+		"research": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/engineering/research/SKILL.md",
+			"computedHash": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4"
+		},
+		"tdd": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/engineering/tdd/SKILL.md",
+			"computedHash": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0"
+		},
+		"to-spec": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/engineering/to-spec/SKILL.md",
+			"computedHash": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088"
+		},
+		"triage": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/engineering/triage/SKILL.md",
+			"computedHash": "917b0baf74be583e74f110857ed45df2766617f75c00baf61fd136d7af515edf"
+		},
+		"ultracave": {
+			"source": "JuliusBrussee/caveman",
+			"sourceType": "github",
+			"ref": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+			"skillPath": "skills/ultracave/SKILL.md",
+			"computedHash": "a8da5b0b3501b853e1b98f2ae09fe8dc9c0edf481b1d3fa9529f8557011c1ef8"
+		},
+		"writing-for-agents": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"ref": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+			"skillPath": "skills/productivity/writing-for-agents/SKILL.md",
+			"computedHash": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a"
 		}
 	}
 }

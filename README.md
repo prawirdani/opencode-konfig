@@ -39,7 +39,7 @@ is the argument.
 | `commands/` | Slash commands (`/commit`, `/pr`, `/caveman*`, `/megacave`, `/ultracave`) |
 | `plugins/` | Repo-local plugins (`caveman`, `rtk.ts`) |
 | `skills/` | 24 vendored skills |
-| `skills-lock.json` | Source and hash record for the skills that were installed from GitHub |
+| `skills-lock.json` | Source, pinned commit and hash record for all 24 vendored skills |
 | `AGENTS.md` | Global agent instructions (terse "caveman" response style) |
 | `biome.json` | Biome formatting rules for this repo's own JS/TS/JSON |
 | `service.json` | Local server password. Gitignored — never commit it |
@@ -106,9 +106,13 @@ first start needs network access. They are not vendored here.
 
 Vendored in `skills/`, installed from these sources:
 
-- **`JuliusBrussee/caveman`** — `caveman`, `caveman-commit`, `caveman-compress`, `caveman-help`, `caveman-review`, `caveman-stats`, `cavecrew`, plus `megacave` and `ultracave` (present locally, absent from `skills-lock.json`).
-- **`mattpocock/skills`** — `code-review`, `codebase-design`, `grilling`, `grill-me`, `grill-with-docs`, plus `tdd`, `diagnosing-bugs`, `to-spec`, `implement-spec`, `triage`, `research`, `handoff`, `improve-codebase-architecture`, `writing-for-agents` (the last nine are not recorded in `skills-lock.json`).
-- **`impeccable`** v4.0.4 — vendored frontend design and audit skill.
+- **`JuliusBrussee/caveman`** — `caveman`, `caveman-commit`, `caveman-compress`, `caveman-help`, `caveman-review`, `caveman-stats`, `cavecrew`, `megacave`, `ultracave`.
+- **`mattpocock/skills`** — `code-review`, `codebase-design`, `grilling`, `grill-me`, `grill-with-docs`, `tdd`, `diagnosing-bugs`, `to-spec`, `implement-spec`, `triage`, `research`, `handoff`, `improve-codebase-architecture`, `writing-for-agents`.
+- **`pbakaus/impeccable`** — vendored frontend design and audit skill, local copy v4.0.4 (upstream is ahead at v4.3.1).
+
+All 24 are recorded in `skills-lock.json`. Entries carrying a `ref` pin the upstream
+commit and hash the upstream `SKILL.md`; the other 12 predate that convention and
+carry only `source`, `sourceType` and `skillPath`.
 
 The plugins contribute further skills at runtime (`ponytail`, `deepwork`,
 `step-back`, `simplify`, `worktrees`, `reflect`, `clonedeps`, `codemap`,
