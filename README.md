@@ -7,6 +7,26 @@ slash commands.
 Secrets never live here. Every credential is referenced by path from
 `~/.secrets/`, so this repo is safe to publish.
 
+## Personal config
+
+One person's daily driver, on Linux, tuned over time. The opinions are the point.
+
+- **Voice.** Replies default to `caveman`: answer first, no ceremony, every
+  technical fact kept. `/caveman ultra` cuts to fragments, `/megacave` goes to
+  Classical Chinese. `AGENTS.md` enforces it; `plugins/caveman` tracks it.
+- **Coding rule.** Ponytail at full level. Smallest change that fully solves the
+  task; no abstraction nobody asked for; name what got skipped.
+- **Tabs, width 100.** `biome.json` is not up for debate. The theme is `orng`,
+  because orange is the right answer.
+- **Presets named for moods.** `main` when Opus should drive, `mocin` for a cheap
+  all-`deepseek-flash` fleet, `gretong` when only free models are allowed.
+- **Free models where the work is invisible.** Titles, summaries, compaction and
+  subagent legwork run free. Paid reasoning is spent on judgment, not plumbing.
+- **Secrets stay out of git.** No exceptions, no "just this once".
+
+If that reads like a personality, it is one, and it is load-bearing: the config
+is the argument.
+
 ## Layout
 
 | Path | Purpose |
