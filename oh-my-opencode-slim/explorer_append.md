@@ -4,3 +4,5 @@
 - **tavily**: the open web. Use for changelogs, release notes, blog posts, issue/discussion threads, pricing, RFCs, status pages, or any question with no library docs and no code sample.
 
 Order of preference: context7 → gh_grep → tavily. Escalate only when the cheaper source does not answer. Cite which source each claim came from.
+
+Do not use the built-in `webfetch` tool: it failed 17.5% of the time over 418 measured calls. Use `tavily_extract` for articles and docs. Use playwright tools when the page needs JavaScript or a login.

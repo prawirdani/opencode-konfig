@@ -8,10 +8,18 @@
 				"apiKey": "{file:~/.secrets/ninerouter-key}"
 			},
 			"models": {
-				"glm/glm-5.3-flash": {},
-				"ds/deepseek-flash": {},
+				"ds/deepseek-flash": {
+					"limit": {
+						"context": 1048576,
+						"output": 393216
+					}
+				},
 				"cc/claude-fable-5": {
 					"name": "cc/claude-fable-5",
+					"limit": {
+						"context": 1000000,
+						"output": 128000
+					},
 					"capabilities": {
 						"tools": true,
 						"input": ["text", "image"],
@@ -46,6 +54,10 @@
 				},
 				"cc/claude-opus-4-8": {
 					"name": "cc/claude-opus-4-8",
+					"limit": {
+						"context": 1000000,
+						"output": 128000
+					},
 					"capabilities": {
 						"tools": true,
 						"input": ["text", "image"],
@@ -87,12 +99,59 @@
 			}
 		}
 	},
+	"watcher": {
+		"ignore": [
+			"**/node_modules/**",
+			"**/.git/**",
+			"**/dist/**",
+			"**/build/**",
+			"**/target/**",
+			"**/.next/**"
+		]
+	},
+	"permissions": [
+		{
+			"action": "bash",
+			"resource": "rm -rf *",
+			"effect": "deny"
+		},
+		{
+			"action": "bash",
+			"resource": "git push --force*",
+			"effect": "deny"
+		},
+		{
+			"action": "bash",
+			"resource": "git reset --hard*",
+			"effect": "deny"
+		},
+		{
+			"action": "bash",
+			"resource": "curl * | sh*",
+			"effect": "deny"
+		},
+		{
+			"action": "read",
+			"resource": "**/.secrets/**",
+			"effect": "ask"
+		},
+		{
+			"action": "read",
+			"resource": "**/.env*",
+			"effect": "ask"
+		},
+		{
+			"action": "read",
+			"resource": "**/.env.example",
+			"effect": "allow"
+		}
+	],
 	"plugins": ["@dietrichgebert/ponytail", "./plugins/caveman", "oh-my-opencode-slim"],
 	"mcp": {
 		"servers": {
 			"playwright": {
 				"type": "local",
-				"command": ["npx", "-y", "@playwright/mcp@latest", "--headless"]
+				"command": ["npx", "-y", "@playwright/mcp@0.0.83", "--headless"]
 			},
 			"tavily": {
 				"type": "local",
@@ -108,6 +167,10 @@
 		"gofmt": {
 			"command": ["goimports", "-w", "$FILE"],
 			"extensions": [".go"]
+		},
+		"biome": {
+			"command": ["bunx", "@biomejs/biome", "check", "--write", "$FILE"],
+			"extensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".jsonc", ".css"]
 		}
 	},
 	"agents": {
@@ -116,10 +179,21 @@
 		},
 		"general": {
 			"disabled": true
+		},
+		"title": {
+			"model": "opencode/deepseek-v4.1-flash-free"
+		},
+		"summary": {
+			"model": "opencode/deepseek-v4.1-flash-free"
+		},
+		"compaction": {
+			"model": "opencode/deepseek-v4.1-flash-free"
 		}
 	},
 	"compaction": {
 		"auto": true,
-		"keep": { "tokens": 15000 }
+		"keep": {
+			"tokens": 15000
+		}
 	}
 }
