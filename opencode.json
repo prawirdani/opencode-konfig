@@ -4,7 +4,7 @@
 		"9router": {
 			"package": "aisdk:@ai-sdk/openai-compatible",
 			"settings": {
-				"baseURL": "http://103.118.175.240:20129/v1",
+				"baseURL": "{file:~/.secrets/ninerouter-base-url}",
 				"apiKey": "{file:~/.secrets/ninerouter-key}"
 			},
 			"models": {
@@ -157,7 +157,7 @@
 				"type": "local",
 				"command": ["tavily-mcp"],
 				"environment": {
-					"TAVILY_API_KEY": "{env:TAVILY_API_KEY}"
+					"TAVILY_API_KEY": "{file:~/.secrets/tavily-key}"
 				}
 			}
 		}
