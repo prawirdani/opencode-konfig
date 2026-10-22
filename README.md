@@ -38,6 +38,7 @@ is the argument.
 | `agents/` | Local agent prompts (`cavecrew-builder`, `cavecrew-investigator`, `cavecrew-reviewer`) |
 | `commands/` | Slash commands (`/commit`, `/pr`, `/caveman*`, `/megacave`, `/ultracave`) |
 | `plugins/` | Repo-local plugins (`caveman`, `rtk.ts`) |
+| `scripts/rtk-check.sh` | Verifies rtk will actually rewrite commands in a session |
 | `skills/` | 24 vendored skills |
 | `skills-lock.json` | Source, pinned commit and hash record for all 24 vendored skills |
 | `AGENTS.md` | Global agent instructions (terse "caveman" response style) |
@@ -97,7 +98,7 @@ granted to the explorer agent by the presets, not declared here.
 | `oh-my-opencode-slim` | npm | Orchestrator/subagent architecture, presets, built-in skills |
 | `@dietrichgebert/ponytail` | npm | Lazy-senior-dev coding rules and reviews |
 | `./plugins/caveman` | this repo | Terse response mode plus its slash commands |
-| `./plugins/rtk.ts` | this repo | Thin shim that delegates command rewriting to the `rtk` binary; inert when `rtk` is not on `PATH` |
+| `./plugins/rtk.ts` | this repo | Thin shim that delegates command rewriting to the `rtk` binary. Inert when `rtk` is not on OpenCode's `PATH`; telemetry is disabled in `~/.config/rtk/config.toml`; run `scripts/rtk-check.sh` to confirm it is live |
 
 npm plugins are fetched into `~/.cache/opencode/packages` on first run, so the
 first start needs network access. They are not vendored here.
@@ -138,7 +139,7 @@ cache and are not part of this repo.
 | `typescript-language-server` | 6.0.2 | TS/JS LSP diagnostics |
 | `typescript` | 7.0.2 | `tsc` used by the TS language server |
 | `goimports` | — | optional; the Go formatter |
-| `rtk` | — | optional; command-rewrite savings in `plugins/rtk.ts` |
+| `rtk` | 1.0.1 | required for command rewriting; must be on the `PATH` OpenCode itself sees, not just a login shell |
 | `rg` | 14.1.0 | search. OpenCode falls back to its own bundled copy (15.1.0) if absent |
 | Playwright browsers | chromium | the playwright MCP server |
 | Reachable 9router proxy | — | every `9router/*` model |
