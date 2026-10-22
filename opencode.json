@@ -1,0 +1,126 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"providers": {
+		"9router": {
+			"package": "aisdk:@ai-sdk/openai-compatible",
+			"settings": {
+				"baseURL": "http://103.118.175.240:20129/v1",
+				"apiKey": "{file:~/.secrets/ninerouter-key}"
+			},
+			"models": {
+				"glm/glm-5.3-flash": {},
+				"ds/deepseek-v4-flash": {},
+				"ds/deepseek-v4-flash-vision-exp": {},
+				"cc/claude-fable-5": {
+					"name": "cc/claude-fable-5",
+					"capabilities": {
+						"tools": true,
+						"input": ["text", "image"],
+						"output": ["text"]
+					},
+					"variants": [
+						{
+							"id": "low",
+							"settings": {
+								"reasoningEffort": "low"
+							}
+						},
+						{
+							"id": "medium",
+							"settings": {
+								"reasoningEffort": "medium"
+							}
+						},
+						{
+							"id": "high",
+							"settings": {
+								"reasoningEffort": "high"
+							}
+						},
+						{
+							"id": "max",
+							"settings": {
+								"reasoningEffort": "max"
+							}
+						}
+					]
+				},
+				"cc/claude-opus-4-8": {
+					"name": "cc/claude-opus-4-8",
+					"capabilities": {
+						"tools": true,
+						"input": ["text", "image"],
+						"output": ["text"]
+					},
+					"variants": [
+						{
+							"id": "low",
+							"settings": {
+								"reasoningEffort": "low"
+							}
+						},
+						{
+							"id": "medium",
+							"settings": {
+								"reasoningEffort": "medium"
+							}
+						},
+						{
+							"id": "high",
+							"settings": {
+								"reasoningEffort": "high"
+							}
+						},
+						{
+							"id": "xhigh",
+							"settings": {
+								"reasoningEffort": "xhigh"
+							}
+						},
+						{
+							"id": "max",
+							"settings": {
+								"reasoningEffort": "max"
+							}
+						}
+					]
+				}
+			}
+		}
+	},
+	"plugins": ["@dietrichgebert/ponytail", "./plugins/caveman", "oh-my-opencode-slim"],
+	"mcp": {
+		"servers": {
+			"playwright": {
+				"type": "local",
+				"command": ["npx", "-y", "@playwright/mcp@latest", "--headless"]
+			},
+			"tavily": {
+				"type": "local",
+				"command": ["tavily-mcp"],
+				"environment": {
+					"TAVILY_API_KEY": "{env:TAVILY_API_KEY}"
+				}
+			}
+		}
+	},
+	"lsp": true,
+	"formatter": {
+		"gofmt": {
+			"command": ["goimports", "-w", "$FILE"],
+			"extensions": [".go"]
+		}
+	},
+	"agents": {
+		"explore": {
+			"disabled": true
+		},
+		"general": {
+			"disabled": true
+		}
+	},
+	"compaction": {
+		"auto": true,
+		"keep": { "tokens": 15000 }
+	}
+}

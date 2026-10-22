@@ -1,0 +1,5 @@
+node_modules/
+service.json
+*.bak
+.caveman-*
+.ponytail-*

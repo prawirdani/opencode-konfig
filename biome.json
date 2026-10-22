@@ -1,0 +1,22 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.6.2/schema.json",
+	"files": {
+		"includes": [
+			"**/*.json",
+			"**/*.jsonc",
+			"!**/node_modules/**",
+			"!**/skills/**",
+			"!**/plugins/**"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 100
+	},
+	"json": {
+		"formatter": {
+			"enabled": true
+		}
+	}
+}
