@@ -17,7 +17,8 @@
 				"model": "9router/ds/deepseek-v4-flash",
 				"variant": "medium",
 				"skills": [],
-				"mcps": ["context7", "gh_grep", "tavily"]
+				"mcps": ["context7", "gh_grep", "tavily"],
+				"prompt": "For anything live or recent — versions, releases, changelogs, blog posts, pricing, breaking changes — use tavily search/extract before answering. Use context7 for API docs, gh_grep for source."
 			},
 			"explorer": {
 				"model": "9router/ds/deepseek-v4-flash",
