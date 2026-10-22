@@ -1,6 +1,6 @@
 {
 	"$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-	"preset": "all-ds-flash",
+	"preset": "all-free",
 	"presets": {
 		"all-ds-flash": {
 			"orchestrator": {
@@ -25,6 +25,33 @@
 			},
 			"fixer": {
 				"model": "9router/ds/deepseek-flash",
+				"skills": [],
+				"mcps": []
+			}
+		},
+		"all-free": {
+			"orchestrator": {
+				"model": "opencode/deepseek-v4.1-flash-free",
+				"skills": ["*"],
+				"mcps": ["*", "!context7"]
+			},
+			"oracle": {
+				"model": "opencode/nemotron-3-ultra-free",
+				"skills": ["simplify"],
+				"mcps": []
+			},
+			"explorer": {
+				"model": "opencode/nemotron-3.5-lightning-free",
+				"skills": [],
+				"mcps": ["context7", "gh_grep", "tavily"]
+			},
+			"designer": {
+				"model": "opencode/glm-5.3-flash-free",
+				"skills": ["impeccable"],
+				"mcps": []
+			},
+			"fixer": {
+				"model": "opencode/deepseek-v4.1-flash-free",
 				"skills": [],
 				"mcps": []
 			}
