@@ -184,15 +184,6 @@
 		},
 		"general": {
 			"disabled": true
-		},
-		"title": {
-			"model": "opencode/deepseek-v4.1-flash-free"
-		},
-		"summary": {
-			"model": "opencode/deepseek-v4.1-flash-free"
-		},
-		"compaction": {
-			"model": "opencode/deepseek-v4.1-flash-free"
 		}
 	},
 	"compaction": {

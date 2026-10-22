@@ -3,3 +3,4 @@ service.json
 *.bak
 .caveman-*
 .ponytail-*
+.oh-my-opencode-slim.json.write-lock

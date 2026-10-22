@@ -20,8 +20,9 @@ One person's daily driver, on Linux, tuned over time. The opinions are the point
   because orange is the right answer.
 - **Presets named for moods.** `main` when Opus should drive, `mocin` for a cheap
   all-`deepseek-flash` fleet, `gretong` when only free models are allowed.
-- **Free models where the work is invisible.** Titles, summaries, compaction and
-  subagent legwork run free. Paid reasoning is spent on judgment, not plumbing.
+- **Cost is a preset, not a per-agent pin.** `mocin` and `gretong` keep the whole
+  fleet cheap; `main` spends on the orchestrator and oracle. Internal agents
+  (titles, summaries, compaction) follow the orchestrator instead of being pinned.
 - **Secrets stay out of git.** No exceptions, no "just this once".
 
 If that reads like a personality, it is one, and it is load-bearing: the config
@@ -63,9 +64,9 @@ Its endpoint and API key are read from files:
 | `9router/cc/claude-opus-4-8` | 1,000,000 / 128,000 | `low`, `medium`, `high`, `xhigh`, `max` |
 | `9router/cc/claude-fable-5` | 1,000,000 / 128,000 | `low`, `medium`, `high`, `max` |
 
-Internal agents `title`, `summary` and `compaction` run on a free model
-(`opencode/deepseek-v4.1-flash-free`) so they never consume proxy quota.
-`explore` and `general` are disabled.
+Internal agents `title`, `summary` and `compaction` carry no model pins, so they
+follow the active preset's orchestrator — free under `mocin`/`gretong`, paid under
+`main`. `explore` and `general` are disabled.
 
 ### Agent presets
 
@@ -75,8 +76,8 @@ selects the active one.
 | Preset | orchestrator | oracle | explorer | designer | fixer |
 | --- | --- | --- | --- | --- | --- |
 | `main` | `cc/claude-opus-4-8` (`high`) | `cc/claude-opus-4-8` (`max`) | `opencode/deepseek-v4.1-flash-free` | `ds/deepseek-flash` | `ds/deepseek-flash` |
-| `mocin` | `ds/deepseek-flash` | `ds/deepseek-flash` | `ds/deepseek-flash` | `ds/deepseek-flash` | `ds/deepseek-flash` |
-| `gretong` *(active)* | `opencode/deepseek-v4.1-flash-free` | `opencode/nemotron-3-ultra-free` | `opencode/nemotron-3.5-lightning-free` | `opencode/glm-5.3-flash-free` | `opencode/deepseek-v4.1-flash-free` |
+| `mocin` *(active)* | `ds/deepseek-flash` | `ds/deepseek-flash` | `ds/deepseek-flash` | `ds/deepseek-flash` | `ds/deepseek-flash` |
+| `gretong` | `opencode/deepseek-v4.1-flash-free` | `opencode/nemotron-3-ultra-free` | `opencode/nemotron-3.5-lightning-free` | `opencode/glm-5.3-flash-free` | `opencode/deepseek-v4.1-flash-free` |
 
 Model ids outside `9router/` come from the `opencode` provider and are free.
 Switch presets by editing `"preset"` and reloading OpenCode.
